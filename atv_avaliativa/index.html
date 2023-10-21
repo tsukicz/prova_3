@@ -26,6 +26,10 @@
             box-sizing: border-box;
         }
 
+        sidebar {
+            padding: 5%;
+        }
+
         .container {
             font-family: 'Poppins', sans-serif;
             display: grid;
@@ -35,41 +39,29 @@
             grid-template-columns: 20% auto;
             grid-template-areas: 
                 "a1 a2";
-
         }
-
-        .box1 {
-            background-color: var(--cor5);
-            grid-area: a1;
-
-        }
-
+        
+       
         .top {
-            margin-top: 1px;
-
+            margin-top: 0;
             display: flex;
-            flex-direction: row;
             justify-content: space-around;
         }
 
         .mid {
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
 
-            padding-top: 45%;
+            padding-top: 50%;
             padding-bottom: 15%;
         }
 
         .bot {
-          display: flex;
-          flex-direction: column;
-
-          padding-left: 10%;
-        }
-
-        .ref {
-            display: grid;
+            display: flex;
+            flex-direction: column;
+            padding: 7%;
         }
 
         .main {
@@ -96,6 +88,7 @@
             background-color: var(--cor6);
             width: 300px;
             height: 35px;
+
             border-radius: 8px;
         }
 
@@ -117,7 +110,7 @@
         }
 
         #direita {
-
+            text-align: right;
         }
 
     </style>
@@ -128,20 +121,19 @@
     
     <div class = "container"> 
 
-        <sidebar class = "box1">
+        <sidebar>
 
             <div class = "top">    
                 <a id = "log" href = "index2.html"> Login </a>
                 <a id = "reg" href = "index.html"> Register </a>
             </div>
 
-            <div class = "mid">  
+            <div class = "mid">
             <img id = "img2" src = "logo.png">
             <h4>Create Your Account</h4>
             </div>
 
-
-            <div class = "bot"> 
+            <div class = "bot">
             <label for = "input_nome">Full Name</label>
             <input type = "text" id = "input_nome" placeholder = "John Doe">
 
@@ -155,15 +147,13 @@
             <label for = "input_password">Password</label>
             <input type = "text" id = "input_password" placeholder = "Enter your password">
 
-            <br>
-
             <a href = "" id = "direita">Forgot Password?</a>
 
             <br>
 
             <button onclick = "criarConta()" id = "botao1">Create Account</button>
+            
             </div>
-
 
         </sidebar>
 
