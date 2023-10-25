@@ -5,7 +5,6 @@
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Avaliação</title>
 
-
     <style>
 
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -35,7 +34,6 @@
             grid-template-columns: 20% auto;
             grid-template-areas: 
                 "a1 a2";
-
         }
 
         sidebar {
@@ -71,9 +69,9 @@
         }
 
         .bot {
-            display: flex;
-            flex-direction: column;
-            padding: 7%;
+           display: flex;
+           flex-direction: column;
+           padding: 7%;
         }
 
         .main {
@@ -98,29 +96,54 @@
 
         input, button {
             background-color: var(--cor6);
+
             width: 300px;
             height: 35px;
+
             border-radius: 8px;
+            border: none;
+        }
+
+        input {
+            width: 255px;
+        }
+
+        .mini {
+            width: 35px;
+            height: 35px;
+            border-radius: 5px;
+
+            background-color: var(--cor1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         label {
             padding-bottom: 5px;
+            position: static;
         }
 
         #log {
             color: var(--cor1);
+            text-decoration: none;
+            font-weight: bold;
         }
 
         #reg {
             color: var(--cor2);
+            text-decoration: none;
+            font-weight: bold;
         }
 
         #botao_log {
             background-color: var(--cor1);
             color: var(--cor5);
+            cursor: pointer;
         }
 
         #pass {
+            font-size: small;
             text-align: right;
         }
 
@@ -148,20 +171,21 @@
             <div class = "bot"> 
             <label for = "input_email">Email Address</label>
             <input type = "text" id = "input_email" placeholder = "Alex@email.com">
+            <div class = "mini"> <img src = "./Envelop.png" alt = ""></div>
 
             <br>
 
             <label for = "input_password">Password</label>
-            <input type = "text" id = "input_password" placeholder = "Enter your password">
+            <input type = "password" id = "input_password" placeholder = "Enter your password">
+            <div class = "mini"> <img src = "./Lock.png" alt = ""></div>
 
             <a href = "" id = "pass">Forgot Password?</a>
 
             <br>
 
-            <button onclick = "logarConta()" id = "botao_log">Create Account</button>
+            <button onclick = "logarConta()" id = "botao_log">Login</button>
 
             </div>
-
 
         </sidebar>
 
@@ -170,6 +194,31 @@
     </div>
 
     <script>
+
+        function logarConta() {
+            let email = document.getElementById("input_email").value
+            let password = document.getElementById("input_password").value
+
+            if (email === "" || password === "") {
+                alert("Todos os campos devem ser preenchidos")
+                return false;
+            }
+
+            else if (email != "admin@email.com.br") {
+                alert("Email incorreto")
+                return false;
+            }
+
+            else if (password != "#dw1UTFPR#") {
+                alert("Senha incorreta")
+                return false;
+            } 
+
+            else {
+                alert("Usuário autenticado")
+            }
+        }
+
     </script>
 
 </body>

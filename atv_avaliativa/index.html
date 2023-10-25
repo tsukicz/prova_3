@@ -86,10 +86,12 @@
 
         input, button {
             background-color: var(--cor6);
+
             width: 300px;
             height: 35px;
 
             border-radius: 8px;
+            border: none;
         }
 
         label {
@@ -98,18 +100,24 @@
 
         #log {
             color: var(--cor2);
+            text-decoration: none;
+            font-weight: bold;
         }
 
         #reg {
             color: var(--cor1);
+            text-decoration: none;
+            font-weight: bold;
         }
 
         #botao1 {
             background-color: var(--cor1);
             color: var(--cor5);
+            cursor: pointer;
         }
 
         #direita {
+            font-size: small;
             text-align: right;
         }
 
@@ -145,7 +153,7 @@
             <br>
 
             <label for = "input_password">Password</label>
-            <input type = "text" id = "input_password" placeholder = "Enter your password">
+            <input type = "password" id = "input_password" placeholder = "Enter your password">
 
             <a href = "" id = "direita">Forgot Password?</a>
 
@@ -162,6 +170,37 @@
     </div>
 
     <script>
+        
+        function criarConta() {
+            let nome = document.getElementById("input_nome").value
+            let email = document.getElementById("input_email").value
+            let password = document.getElementById("input_password").value
+
+            if (nome === "" || email === "" || password === "") { 
+                alert("Todos os campos devem ser preenchidos")
+                return false;
+            }
+
+            else if (password.length < 8 ) {
+                alert("Sua senha deve ter mais de 8 caracteres")
+                return false;
+            }
+
+            else {
+                alert("Cadastro realizado");
+                nome.innerHTML = "";
+                email.innerHTML = "";
+                password.innerHTML = "";
+                limpar()
+            }
+        }
+
+        function limpar() {
+            document.getElementById('input_nome').value = "";
+            document.getElementById('input_email').value = "";
+            document.getElementById('input_password').value = "";
+        }
+
     </script>
 
 </body>
