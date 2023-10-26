@@ -16,7 +16,7 @@
             --cor4: #C2C2C2;
             --cor5: #FFFFFF;
             --cor6: #F1F3F6;
-
+            --cor7: rgb(209, 97, 5);
         }
 
         * {
@@ -46,11 +46,10 @@
             height: 100vh;
             width: 100vw;
 
-            grid-template-columns: 20% auto;
+            grid-template-columns: 25% auto;
             grid-template-areas: 
                 "a1 a2";
         }
-        
        
         .top {
             margin-top: 0;
@@ -71,7 +70,7 @@
         .bot {
            display: flex;
            flex-direction: column;
-           padding: 7%;
+           padding: 5%;
         }
 
         .main {
@@ -105,7 +104,7 @@
         }
 
         input {
-            width: 255px;
+            width: 355px;            
         }
 
         .mini {
@@ -117,6 +116,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: absolute;
+        }
+
+        .bot_input {
+            display: flex;
+            flex-direction: row-reverse;
         }
 
         label {
@@ -140,6 +145,10 @@
             background-color: var(--cor1);
             color: var(--cor5);
             cursor: pointer;
+        }
+
+        #botao_log:hover {
+            background: var(--cor7);
         }
 
         #pass {
@@ -170,14 +179,20 @@
 
             <div class = "bot"> 
             <label for = "input_email">Email Address</label>
+
+            <div class = "bot_input"> 
             <input type = "text" id = "input_email" placeholder = "Alex@email.com">
             <div class = "mini"> <img src = "./Envelop.png" alt = ""></div>
+            </div>
 
             <br>
 
             <label for = "input_password">Password</label>
+
+            <div class = "bot_input"> 
             <input type = "password" id = "input_password" placeholder = "Enter your password">
-            <div class = "mini"> <img src = "./Lock.png" alt = ""></div>
+            <div class = "mini"> <img src = "./Lock.png" alt = ""> </div>
+            </div>
 
             <a href = "" id = "pass">Forgot Password?</a>
 
@@ -206,17 +221,27 @@
 
             else if (email != "admin@email.com.br") {
                 alert("Email incorreto")
+                limparEmail()
                 return false;
             }
 
             else if (password != "#dw1UTFPR#") {
                 alert("Senha incorreta")
+                limparSenha()
                 return false;
             } 
 
             else {
                 alert("Usuário autenticado")
             }
+        }
+
+        function limparEmail() {
+            document.getElementById('input_email').value = "";
+        }
+
+        function limparSenha() {
+            document.getElementById('input_password').value = "";
         }
 
     </script>

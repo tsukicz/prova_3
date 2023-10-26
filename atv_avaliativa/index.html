@@ -17,6 +17,7 @@
             --cor4: #C2C2C2;
             --cor5: #FFFFFF;
             --cor6: #F1F3F6;
+            --cor7: rgb(209, 97, 5);
 
         }
 
@@ -36,7 +37,7 @@
             height: 100vh;
             width: 100vw;
 
-            grid-template-columns: 20% auto;
+            grid-template-columns: 25% auto;
             grid-template-areas: 
                 "a1 a2";
         }
@@ -61,7 +62,7 @@
         .bot {
             display: flex;
             flex-direction: column;
-            padding: 7%;
+            padding: 5%;
         }
 
         .main {
@@ -114,6 +115,10 @@
             background-color: var(--cor1);
             color: var(--cor5);
             cursor: pointer;
+        }
+
+        #botao1:hover {
+            background: var(--cor7);
         }
 
         #direita {
@@ -188,9 +193,9 @@
 
             else {
                 alert("Cadastro realizado");
-                nome.innerHTML = "";
-                email.innerHTML = "";
-                password.innerHTML = "";
+                nome.innerHTML;
+                email.innerHTML;
+                password.innerHTML;
                 limpar()
             }
         }
